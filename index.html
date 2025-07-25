@@ -1,32 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ram | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gayu | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { scroll-behavior: smooth; }
+    section { padding: 60px 0; }
+    .nav-link { cursor: pointer; }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Hi, I'm Ram</h1>
-        <p>Web Developer & Cybersecurity Enthusiast</p>
-    </header>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Final-year CSE student passionate about secure, responsive web development.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li>Responsive Portfolio Website</li>
-                <li>Flask Authentication App</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: your.email@example.com</p>
-        </section>
-    </main>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Gayu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="about" class="container text-center">
+    <h2>About Me</h2>
+    <p>I’m Gayu, a Computer Science student passionate about web development and cybersecurity. I build secure, responsive websites and love exploring ethical hacking and backend logic.</p>
+  </section>
+
+  <section id="skills" class="bg-light text-center">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="list-unstyled">
+        <li>HTML5, CSS3, JavaScript, Bootstrap</li>
+        <li>Python, Flask (basic), Git, GitHub</li>
+        <li>Network Security Fundamentals, OWASP Top 10</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" class="container text-center">
+    <h2>Projects</h2>
+    <p><strong>Secure Portfolio Website</strong> - The very site you're viewing. Built using secure coding practices and hosted on GitHub Pages.</p>
+    <p><strong>Flask Auth App</strong> - A user authentication system with hashed passwords and session-based login. (Coming soon!)</p>
+  </section>
+
+  <section id="contact" class="bg-light text-center">
+    <div class="container">
+      <h2>Contact</h2>
+      <form onsubmit="return validateForm();">
+        <input type="text" id="name" placeholder="Your Name" class="form-control mb-2" required />
+        <input type="email" id="email" placeholder="Your Email" class="form-control mb-2" required />
+        <textarea id="message" placeholder="Your Message" class="form-control mb-2" required></textarea>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="text-center p-3 bg-dark text-white">
+    &copy; 2025 Gayu. All Rights Reserved.
+  </footer>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) {
+        alert('All fields are required.');
+        return false;
+      }
+      const pattern = /<|>|script|alert|onerror|onload/i;
+      if (pattern.test(name + email + message)) {
+        alert('Invalid characters detected.');
+        return false;
+      }
+      alert('Form submitted!');
+      return false;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
