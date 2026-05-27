@@ -1,4 +1,4 @@
-# 💻 Gayu's Portfolio Website
+# 💻 Gayathri's Portfolio Website
 
 A responsive, personal portfolio built using **HTML**, **CSS**, **JavaScript**, and **Bootstrap**. This project showcases my background in **web development** and **cybersecurity**, and is designed with secure coding practices in mind.
 
